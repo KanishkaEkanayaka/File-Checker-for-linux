@@ -1,0 +1,34 @@
+#!/bin/bash
+
+echo "Enter the file name that you need to search"
+read file_path
+
+if [ -f $file_path ]
+then
+
+    echo "file found"
+
+    if [ -r $file_path ]
+    then
+       echo "Its READABLE"
+    else
+       echo "Its NOT READABLE"
+    fi
+
+    if [ -w $file_path ]
+    then
+        echo "Its WRITTABLE"
+    else
+        echo "Its NOT WRITTABLE"
+    fi
+
+    if [ -x $file_path ]
+    then
+        echo "Its EXECUTABLE"
+    else
+        echo "Its NOT EXECUTABLE"
+    fi
+
+else
+   echo "File Not Found"
+fi
